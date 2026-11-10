@@ -1,0 +1,50 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+// IMPRESSIONS CONTAINER
+.impressions__container {
+    @include flex-column(0, center);
+
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+// IMPRESSIONS HEADER
+.impressions__header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+// IMPRESSIONS HEADER TITLE
+.impressions__header-title {
+    font-family: $font-main;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 120%;
+
+    color: $color-text;
+}
+
+// GALLERY LIST
+.gallery__list {
+    display: grid;
+
+    width: 100%;
+
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    img {
+        &:first-child,
+        &:nth-child(5) {
+            grid-column: span 2;
+        }
+    }
+}
+
+// IMPRESSIONS BUTTON
+.impressions__btn {
+    margin-top: 30px;
+    padding: 16px 36px;
+}

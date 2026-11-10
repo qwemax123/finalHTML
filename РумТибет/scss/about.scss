@@ -1,0 +1,93 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+// ABOUT
+.about {
+    margin-top: 100px;
+}
+
+// ABOUT CONTAINER
+.about__container {
+    @include flex-row(120px);
+}
+
+// ABOUT IMAGES
+.about__image {
+    position: relative;
+    width: 100%;
+    max-width: 426px;
+    aspect-ratio: 426 / 467;
+
+    // Задняя картинка
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 73%;
+        height: 76%;
+
+        object-fit: cover;
+        border-radius: 20px;
+        z-index: 1;
+    }
+
+    // Передняя картинка
+    .front {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        width: 73%;
+        height: 76%;
+
+        object-fit: cover;
+        border-radius: 20px;
+        z-index: 2;
+    }
+}
+
+// ABOUT CONTENT
+.about__content {
+    @include flex-column(40px);
+}
+
+// SUBTITLE
+.sub {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+
+    color: $color-accent;
+    padding-bottom: 8px;
+}
+
+// ABOUT TITLE
+.about__title {
+    font-family: $font-main;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 120%;
+
+    color: $color-text;
+    max-width: 580px;
+}
+
+// ABOUT DESCRIPTION
+.about__description {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: $color-text;
+    max-width: 560px;
+}
+
+// ABOUT BUTTON
+.about__btn {
+    align-self: flex-start;
+    padding: 16px 36px;
+}

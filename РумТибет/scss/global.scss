@@ -1,0 +1,49 @@
+html,
+body {
+    font-family: "Nunito Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+.container {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+    color: #fdfdfd;
+    background-color: #1a3e3e;
+    border-radius: 4px;
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #245454;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(26, 62, 62, 0.25);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(26, 62, 62, 0.2);
+}
+
+.sub {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: #f2be22;
+    padding-bottom: 8px;
+}
+
+

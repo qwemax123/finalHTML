@@ -1,0 +1,171 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+
+// REVIEWS
+.reviews {
+    margin-top: 100px;
+    background-color: $color-background;
+}
+
+
+// REVIEWS CONTAINER
+.reviews__container {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+
+// REVIEWS HEADER
+.reviews__header {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+
+// REVIEWS TITLE
+.reviews__header-title {
+    font-family: $font-main;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 120%;
+
+    color: $color-text;
+}
+
+
+// REVIEWS LIST
+.reviews__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+
+// REVIEW CARD
+.review-card {
+    @include flex-row(24px, flex-start);
+
+    padding: 16px;
+
+    background-color: $color-light;
+    text-align: left;
+
+    border-radius: 12px;
+    border: 1px solid rgba($color-primary, 0.06);
+
+    transform: translateY(3px) scale(0.98);
+
+    animation: reviewAppear 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    will-change: transform;
+
+    &:hover {
+        transform: translateY(1px) scale(1.01);
+
+        box-shadow: 0 12px 30px rgba($color-primary, 0.12);
+
+        border-color: rgba($color-primary, 0.2);
+    }
+}
+
+
+// REVIEW CARD CONTENT
+.review-card__content {
+    @include flex-column(24px);
+
+    width: 300px;
+}
+
+
+// REVIEW CARD TITLE
+.review-card__title {
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: $color-text;
+
+    transition: $transition-default;
+
+    &:hover {
+        color: $color-primary;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+
+// REVIEW CARD DESCRIPTION
+.review-card__description {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $color-text;
+}
+
+
+// REVIEW CARD FOOTER
+.review-card__footer {
+    @include flex-row(0, center, space-between);
+
+    margin-top: auto;
+
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $color-accent;
+}
+
+
+// REVIEW CARD LINK
+.review-card__link {
+    @extend %link-reset;
+
+    color: $color-primary;
+}
+
+
+// REVIEWS BUTTON
+.reviews__btn {
+    padding: 16px 36px;
+}
+
+
+// REVIEW ANIMATION
+@keyframes reviewAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+// ACCESSIBILITY
+@media (prefers-reduced-motion: reduce) {
+    .review-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

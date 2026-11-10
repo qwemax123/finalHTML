@@ -1,0 +1,170 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+// FOOTER
+.footer {
+    background-color: $color-primary;
+    padding-top: 178px;
+    color: $color-background;
+}
+
+// FOOTER CONTAINER
+.footer__container {
+    @include flex-row(0, flex-start, space-between);
+}
+
+// FOOTER ABOUT
+.footer__about {
+    max-width: 450px;
+}
+
+// FOOTER HEADING
+.footer__heading {
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    margin-bottom: 17px;
+}
+
+// FOOTER DESCRIPTION
+.footer__description {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $color-white;
+    margin-bottom: 80px;
+}
+
+// FOOTER CONTACTS
+.footer__contacts {
+    @include flex-row(24px);
+
+    margin-bottom: 32px;
+}
+
+// FOOTER CONTACT
+.footer__contact {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 14px;
+
+    color: $color-white;
+}
+
+// FOOTER SOCIALS
+.footer__socials {
+    @include flex-row(16px);
+}
+
+// FOOTER SOCIAL LINK
+.footer__social-link {
+    @include flex-row(0, center, center);
+
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+// FOOTER LINKS
+.footer__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 120px;
+}
+
+// FOOTER COLUMN
+.footer__column {
+    max-width: 280px;
+
+    .footer__heading {
+        margin-bottom: 20px;
+    }
+}
+
+// FOOTER LIST
+.footer__list {
+    @include flex-column(16px);
+
+    list-style: none;
+}
+
+// FOOTER ITEM
+.footer__item {
+    @include flex-row(8px);
+
+    &::before {
+        content: "›";
+
+        font-size: 30px;
+        line-height: 14px;
+        color: $color-white;
+    }
+}
+
+// FOOTER LINK
+.footer__link {
+    @extend %link-reset;
+
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: $color-light;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+// FOOTER BADGE
+.footer__badge {
+    padding: 2px 10px;
+
+    border-radius: 4px;
+    background-color: $color-white;
+
+    color: $color-primary;
+
+    font-family: $font-main;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+// FOOTER BOTTOM
+.footer__bottom {
+    background-color: $color-footer-bottom;
+    margin-top: 80px;
+}
+
+// FOOTER POLICY
+.footer__policy {
+    @include flex-row(0, center, space-between);
+
+    padding: 24px 0;
+}
+
+// FOOTER COPYRIGHT
+.footer__copyright,
+.footer__policy-link {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: $color-white;
+}
+
+// FOOTER POLICY LINK
+.footer__policy-link {
+    text-decoration: underline;
+}

@@ -1,0 +1,155 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+// HEADER
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background-color: transparent;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        backdrop-filter 0.3s ease;
+}
+
+// HEADER SCROLLED
+.header--scrolled {
+    background-color: rgba($color-primary, 0.35);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+// HEADER CONTAINER
+.header__container {
+    @include flex-row(212px);
+
+    padding-top: 16px;
+}
+
+// HEADER NAVIGATION
+.header__navigation {
+    @include flex-row(49px);
+}
+
+// NAVBAR
+.header__navbar {
+    @include flex-row(24px);
+}
+
+// NAVBAR LINKS
+.header__navbar-link {
+    @extend %link-reset;
+
+    position: relative;
+    margin-bottom: 5px;
+
+    font-weight: 600;
+    font-size: 18px;
+
+    color: $color-light;
+
+    transition: color 0.3s ease-in-out;
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+
+        width: 0;
+        height: 2px;
+
+        background-color: $color-primary;
+
+        transform: translateX(-50%);
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+        color: $color-primary;
+
+        &::after {
+            width: 50%;
+        }
+    }
+}
+
+// HOVER ON SCROLLED HEADER
+.header--scrolled {
+    .header__navbar-link {
+        &:hover {
+            color: $color-light;
+        }
+
+        &::after {
+            background-color: $color-light;
+        }
+    }
+}
+
+// BUTTON
+.btn {
+    @extend %btn-base;
+
+    &:hover {
+        background-color: $color-primary-hover;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(26, 62, 62, 0.25);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 6px rgba(26, 62, 62, 0.2);
+    }
+}
+
+// HEADER BUTTON
+.header__btn {
+    padding: 12px 24px;
+}
+
+// BURGER BUTTON
+.header__burger {
+    display: none;
+
+    background: transparent;
+    border: none;
+    padding: 5px;
+
+    cursor: pointer;
+
+    img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+}
+
+// BURGER
+.header__burger {
+    display: none;
+
+    background: transparent;
+    border: none;
+    padding: 5px;
+
+    cursor: pointer;
+
+    img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+}

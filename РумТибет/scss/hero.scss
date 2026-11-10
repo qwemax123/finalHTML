@@ -1,0 +1,121 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+.main-fon {
+    min-height: 100vh;
+
+    background-image: url("../assets/hero-img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include flex-column();
+}
+
+// HERO
+.hero {
+    flex: 1;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding-bottom: 80px;
+}
+
+// HERO CONTAINER
+.hero__container {
+    width: 100%;
+}
+
+// HERO TITLE
+.hero__title {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 140%;
+
+    color: $color-light;
+    text-transform: uppercase;
+
+    max-width: 980px;
+    padding-bottom: 41px;
+}
+
+// HERO FORM
+.hero__form {
+    @include flex-row(24px, flex-start);
+
+    @extend %glass-panel;
+
+    padding: 40px 42px;
+}
+
+// FORM GROUP
+.form__group {
+    flex: 1;
+
+    @include flex-column(8px);
+}
+
+// FORM SELECT AND INPUT
+.form__select,
+.form__input {
+    @extend %form-control;
+}
+
+// SELECT
+.form__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+// INPUT
+.form__input {
+    cursor: pointer;
+
+    &::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+    }
+}
+
+// FORM HINT
+.form__hint {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $color-light;
+    padding-left: 8px;
+}
+
+// FORM BUTTON
+.form__button {
+    @extend %btn-base;
+
+    font-weight: 700;
+    letter-spacing: 0.012em;
+
+    background-color: $color-light;
+    color: $color-primary;
+
+    padding: 16px 26px;
+
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($color-light, 0.9);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+}

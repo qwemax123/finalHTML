@@ -1,0 +1,96 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "extend" as *;
+
+// SUBSCRIBE
+.subscribe {
+    position: relative;
+    z-index: 5;
+    margin-bottom: -100px;
+}
+
+// SUBSCRIBE CONTAINER
+.subscribe__container {
+    @include flex-row(54px, center, space-between);
+
+    position: relative;
+    z-index: 2;
+
+    padding: 40px 100px;
+
+    border-radius: 6px;
+    background-color: $color-light;
+    box-shadow: $shadow-subscribe;
+}
+
+// SUBSCRIBE HEADER TITLE
+.subscribe__header-title {
+    font-family: $font-main;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 120%;
+
+    color: $color-text;
+}
+
+// SUBSCRIBE FORM
+.subscribe__form {
+    @include flex-column(8px);
+}
+
+// SUBSCRIBE LABEL
+.subscribe__label {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: $color-text;
+}
+
+// SUBSCRIBE FIELD
+.subscribe__field {
+    @include flex-row(16px);
+}
+
+// SUBSCRIBE INPUT
+.subscribe__input {
+    flex-grow: 1;
+
+    font-family: $font-main;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $color-text;
+
+    outline: none;
+    border: none;
+    background-color: $color-background;
+
+    padding: 12px 16px;
+
+    &::placeholder {
+        color: $color-text;
+    }
+}
+
+// SUBSCRIBE BUTTON
+.subscribe__button {
+    padding: 12px 24px;
+}
+
+// SUBSCRIBE POLICY
+.subscribe__policy {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: $color-text;
+
+    span {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}
